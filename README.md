@@ -1,4 +1,4 @@
 poller-wrapper
 ==============
 
-Observium poller-wraper based on celery
+Observium poller-wrapper based on celery
