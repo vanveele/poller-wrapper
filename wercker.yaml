@@ -1,0 +1,14 @@
+box: python:2.7-slim
+dev:
+  steps:
+    - pip-install
+    - internal-watch:
+        code: python app.py
+        reload: true
+build:
+  steps:
+    - pip-install
+    - script:
+        name: python unit test
+        code: |
+          python poller-wrapper.py
