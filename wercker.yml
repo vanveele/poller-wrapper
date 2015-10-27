@@ -2,7 +2,7 @@ box: python:2.7-slim
 dev:
   steps:
     - install-packages:
-      packages: mysql-client
+      packages: mysql-client libmysqlclient-dev
     - pip-install
     - internal-watch:
         code: python poller-wrapper.py
@@ -10,7 +10,7 @@ dev:
 build:
   steps:
     - install-packages:
-      packages: mysql-client
+      packages: mysql-client libmysqlclient-dev
     - pip-install
     - script:
         name: python unit test
