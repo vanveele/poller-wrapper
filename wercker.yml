@@ -1,12 +1,16 @@
 box: python:2.7-slim
 dev:
   steps:
+    - install-packages:
+      packages: python-mysqldb python-celery
     - pip-install
     - internal-watch:
-        code: python app.py
+        code: python poller-wrapper.py
         reload: true
 build:
   steps:
+    - install-packages:
+      packages: python-mysqldb python-celery
     - pip-install
     - script:
         name: python unit test
